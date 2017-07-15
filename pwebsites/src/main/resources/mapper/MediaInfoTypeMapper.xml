@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pweb.mapper.MediaInfoTypeMapper">
+    <!--自定义返回结果集-->
+    <resultMap id="mediaInfoTypeMap" type="com.pweb.entity.MediaInfoType">
+        <id property="id" column="id" ></id>
+        <result property="username" column="username" ></result>
+        <result property="title" column="title" ></result>
+        <result property="remark" column="remark" ></result>
+        <result property="createDate" column="createDate" ></result>
+        <result property="updateDate" column="updateDate" ></result>
+    </resultMap>
+    <sql id="where_id">
+        where id=#{id}
+    </sql>
+    <!--插入媒体类型-->
+    <insert id="insertMediaInfoType" parameterType="com.pweb.entity.MediaInfoType">
+        insert into media_info_type (id,username,title,remark,create_date,update_date) values
+        (#{id},#{username},#{title},#{remark},now(),now())
+</insert>
+    <!--批量插入媒体类型-->
+    <insert id="insertMediaInfoTypeBatch" parameterType="com.pweb.entity.MediaInfoType">
+        insert into media_info_type (id,username,title,remark,create_date,update_date) values
+        <foreach collection="MediaInfoTypes" separator="," item="item">
+            (#{item.id},#{item.username},#{item.title},#{item.remark},now(),now())
+        </foreach>
+    </insert>
+    <!--修改-->
+    <update id="updateMediaInfoType" parameterType="com.pweb.entity.MediaInfoType">
+        update media_info_type
+        <set>
+            <if test="title != null and title != ''">
+                title=#{title},
+            </if>
+        </set>
+        remark=#{remark},updateDate=now()
+        <include refid="where_id"></include>
+    </update>
+    <!--删除-->
+    <delete id="deleteMediaInfoType" parameterType="java.lang.String">
+        delete from media_info_type
+        <include refid="where_id"></include>
+    </delete>
+    <!--根据id查询-->
+    <select id="queryMediaInfoTypeById" parameterType="java.lang.String" resultType="com.pweb.entity.MediaInfoType">
+        select id,username,title,remark,create_date as createDate, update_date as updateDate from media_info_type
+        <include refid="where_id"></include>
+    </select>
+    <!--查询全部-->
+    <select id="queryMediaInfoTypeAll" resultType="com.pweb.entity.MediaInfoType">
+        select id,username,title,remark,create_date as createDate, update_date as updateDate from media_info_type order by update_date
+    </select>
+
+</mapper>
