@@ -8,6 +8,8 @@ import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2017/7/15 0015.
  */
@@ -24,7 +26,7 @@ public class UserProjectServiceImpl implements UserProjectService {
     public JSONObject insertUserProject(UserProject userProject) {
         Integer result = null;
         try {
-
+            result = userProjectMapper.insertUserProject(userProject);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -38,7 +40,7 @@ public class UserProjectServiceImpl implements UserProjectService {
     public JSONObject updateUserProject(UserProject userProject) {
         Integer result = null;
         try {
-
+            result = userProjectMapper.updateUserProject(userProject);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -52,7 +54,7 @@ public class UserProjectServiceImpl implements UserProjectService {
     public JSONObject deleteUserProject(String id) {
         Integer result = null;
         try {
-
+            result = userProjectMapper.deleteUserProject(id);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -64,20 +66,32 @@ public class UserProjectServiceImpl implements UserProjectService {
     }
 
     public JSONObject queryUserProject(String id) {
+        UserProject userProject = null;
         try {
-
+            userProject = userProjectMapper.queryUserProjectById(id);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        if (userProject != null) {
+            return CommonUtils.setResult(true, userProject);
+        } else {
+            return CommonUtils.setResult(false, "查询失败！");
+        }
     }
 
     public JSONObject queryUserProject(String name, Integer first, Integer sum) {
+        List<UserProject> list = null;
+        Integer count = null;
         try {
-
+            list = userProjectMapper.queryUserProjectLimit(name, first, sum);
+            count = userProjectMapper.queryUserProjectLimitCount(name);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        if (list != null && count != null) {
+            return CommonUtils.setResultList(true, list, count);
+        } else {
+            return CommonUtils.setResult(false, "查询失败！");
+        }
     }
 }

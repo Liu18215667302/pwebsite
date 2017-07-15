@@ -16,9 +16,9 @@ public interface UserWorkMapper {
 
     public Integer deleteUserWork(@Param("id") String id) throws Exception;
 
-    public UserWorkMapper queryUserWorkById(@Param("id") String id) throws Exception;
+    public UserWork queryUserWorkById(@Param("id") String id) throws Exception;
 
-    public List<UserWorkMapper> queryUserWorkLimit(@Param("name") String name,
+    public List<UserWork> queryUserWorkLimit(@Param("name") String name,
                                                    @Param("first") Integer first,
                                                    @Param("sum") Integer sum) throws Exception;
     public Integer queryUserWorkLimitCount(@Param("name") String name) throws Exception;

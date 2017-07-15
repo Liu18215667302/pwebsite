@@ -8,6 +8,8 @@ import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2017/7/15 0015.
  */
@@ -24,7 +26,7 @@ public class UserOtherServiceImpl implements UserOtherService {
     public JSONObject insertUserOther(UserOther userOther) {
         Integer result = null;
         try {
-
+            result = userOtherMapper.insertUserOther(userOther);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -38,7 +40,7 @@ public class UserOtherServiceImpl implements UserOtherService {
     public JSONObject updateUserOther(UserOther userOther) {
         Integer result = null;
         try {
-
+            result = userOtherMapper.updateUserOther(userOther);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -52,7 +54,7 @@ public class UserOtherServiceImpl implements UserOtherService {
     public JSONObject deleteUserOther(String id) {
         Integer result = null;
         try {
-
+            result = userOtherMapper.deleteUserOther(id);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -64,20 +66,32 @@ public class UserOtherServiceImpl implements UserOtherService {
     }
 
     public JSONObject queryUserOther(String id) {
+        UserOther userOther = null;
         try {
-
+            userOther = userOtherMapper.queryUserOtherById(id);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        if (userOther != null) {
+            return CommonUtils.setResult(true, userOther);
+        } else {
+            return CommonUtils.setResult(false, "查询失败！");
+        }
     }
 
     public JSONObject queryUserOther(String name, Integer first, Integer sum) {
+        List<UserOther> list = null;
+        Integer count = null;
         try {
-
+            list = userOtherMapper.queryUserOtherLimit(name, first, sum);
+            count = userOtherMapper.queryUserOtherLimitCount(name);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        if (list != null && count != null) {
+            return CommonUtils.setResultList(true, list, count);
+        } else {
+            return CommonUtils.setResult(false, "查询失败！");
+        }
     }
 }
