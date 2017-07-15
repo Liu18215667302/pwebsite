@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pweb.mapper.UserEducationMapper">
+
+    <sql id="where_id">
+        where id=#{id}
+    </sql>
+
+    <!--插入-->
+    <insert id="insertUserEducation" parameterType="com.pweb.entity.UserEducation">
+        insert into user_education
+        (id,username,education,graducated_school,duty,date,remark,create_date,update_date)
+         values
+        (#{id},#{username},#{education},#{graducatedSchool},#{duty},#{date},#{remark},now(),now())
+    </insert>
+
+    <!--修改-->
+    <update id="updateUserEducation" parameterType="com.pweb.entity.UserEducation">
+        update user_education
+        <set>
+            <if test="education != null and education != ''">
+                education=#{education},
+            </if>
+            <if test="graducatedSchool != null and graducatedSchool != ''">
+                graducated_school=#{graducatedSchool},
+            </if>
+            <if test="duty != null and duty != ''">
+                duty=#{duty},
+            </if>
+            <if test="date != null and date != ''">
+                date=#{date},
+            </if>
+        </set>
+        remark=#{remark},updateDate=now()
+        <include refid="where_id"></include>
+    </update>
+
+    <!--删除-->
+    <delete id="deleteUserEducation" parameterType="java.lang.String">
+        delete from user_education
+        <include refid="where_id"></include>
+    </delete>
+
+    <!--查询信息-->
+    <sql id="select_info">
+        select
+        id, username, education, graducated_school as graducatedSchool,duty, date, remark, create_date as createDate, update_date as updateDate
+        from user_education
+    </sql>
+
+    <!--根据id查询-->
+    <select id="queryUserEducationById" parameterType="java.lang.String" resultType="com.pweb.entity.UserEducation">
+        <include refid="select_info"></include>
+        <include refid="where_id"></include>
+    </select>
+
+    <!--模糊查询-->
+    <select id="queryUserEducationLimit" resultType="com.pweb.entity.UserEducation">
+        <include refid="select_info"></include>
+        where graducated_school like concat(concat('%',#{graducatedSchool}),'%')
+        order by update_date
+        limit #{first},#{sum}
+    </select>
+
+    <!--模糊查询数量-->
+    <select id="queryUserEducationLimitCount" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select count(*) from user_education
+        where graducated_school like concat(concat('%',#{graducatedSchool}),'%')
+    </select>
+</mapper>

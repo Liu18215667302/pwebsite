@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pweb.mapper.UserProjectMapper">
+
+    <sql id="where_id">
+        where id=#{id}
+    </sql>
+
+    <!--插入-->
+    <insert id="insertUserProject" parameterType="com.pweb.entity.UserProject">
+        insert into user_project
+        (id,username,name,type,date,project_info,my_work,my_duty,remark,create_date,update_date)
+        values
+        (#{id},#{username},#{name},#{type},#{date},#{projectInfo},#{myWork},#{myDuty},#{remark},now(),now())
+    </insert>
+
+    <!--修改-->
+    <update id="updateUserProject" parameterType="com.pweb.entity.UserProject">
+        update user_project
+        <set>
+            <if test="name != null and name != ''">
+                name=#{name},
+            </if>
+            <if test="type != null and type != ''">
+                type=#{type},
+            </if>
+            <if test="date != null and date != ''">
+                date=#{date},
+            </if>
+            <if test="projectInfo != null and projectInfo != ''">
+                project_info=#{projectInfo},
+            </if>
+            <if test="myWork != null and myWork != ''">
+                my_work=#{myWork},
+            </if>
+            <if test="myDuty != null and myDuty != ''">
+                my_duty=#{myDuty},
+            </if>
+        </set>
+        remark=#{remark},updateDate=now()
+        <include refid="where_id"></include>
+    </update>
+
+
+    <!--删除-->
+    <delete id="deleteUserProject" parameterType="java.lang.String">
+        delete from user_project
+        <include refid="where_id"></include>
+    </delete>
+
+    <!--查询信息-->
+    <sql id="select_info">
+        select
+        id, username, name, type, date, project_info as projectInfo, my_work as myWork, my_duty as myDuty, remark,
+        create_date as createDate, update_date as updateDate
+        from user_project
+    </sql>
+
+    <!--根据id查询-->
+    <select id="queryUserProjectById" parameterType="java.lang.String" resultType="com.pweb.entity.UserProject">
+        <include refid="select_info"></include>
+        <include refid="where_id"></include>
+    </select>
+
+    <!--模糊查询-->
+    <select id="queryUserProjectLimit" resultType="com.pweb.entity.UserProject">
+        <include refid="select_info"></include>
+        where name like concat(concat('%',#{name}),'%')
+        order by update_date
+        limit #{first},#{sum}
+    </select>
+
+    <!--模糊查询数量-->
+    <select id="queryUserProjectLimitCount" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select count(*) from user_project
+        where name like concat(concat('%',#{name}),'%')
+    </select>
+</mapper>

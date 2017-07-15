@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pweb.mapper.UserWorkMapper">
+
+    <sql id="where_id">
+        where id=#{id}
+    </sql>
+
+    <!--插入-->
+    <insert id="insertUserWork" parameterType="com.pweb.entity.UserWork">
+        insert into user_work
+        (id, username, name, date, company, my_duty, content, remark, create_date, update_date)
+         values
+        (#{id},#{username},#{name},#{date},#{company},#{myDuty},#{content},#{remark},now(),now())
+    </insert>
+
+    <!--修改-->
+    <update id="updateUserWork" parameterType="com.pweb.entity.UserWork">
+        update user_work
+        <set>
+            <if test="name != null and name != ''">
+                name=#{name},
+            </if>
+            <if test="date != null and date != ''">
+                date=#{date},
+            </if>
+            <if test="company != null and company != ''">
+                company=#{company},
+            </if>
+            <if test="myDuty != null and myDuty != ''">
+                my_duty=#{myDuty},
+            </if>
+            <if test="content != null and content != ''">
+                content=#{content},
+            </if>
+        </set>
+        remark=#{remark},updateDate=now()
+        <include refid="where_id"></include>
+    </update>
+
+
+    <!--删除-->
+    <delete id="deleteUserWork" parameterType="java.lang.String">
+        delete from user_work
+        <include refid="where_id"></include>
+    </delete>
+
+    <!--查询信息-->
+    <sql id="select_info">
+        select
+        id, username, name, date, company, my_duty as myDuty, content, remark, create_date as createDate, update_date as updateDate
+        from user_work
+    </sql>
+
+    <!--根据id查询-->
+    <select id="queryUserWorkById" parameterType="java.lang.String" resultType="com.pweb.entity.UserWork">
+        <include refid="select_info"></include>
+        <include refid="where_id"></include>
+    </select>
+
+    <!--模糊查询-->
+    <select id="queryUserWorkLimit" resultType="com.pweb.entity.UserWork">
+        <include refid="select_info"></include>
+        where name like concat(concat('%',#{name}),'%')
+        order by update_date
+        limit #{first},#{sum}
+    </select>
+
+    <!--模糊查询数量-->
+    <select id="queryUserWorkLimitCount" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select count(*) from user_work
+        where name like concat(concat('%',#{name}),'%')
+    </select>
+</mapper>
