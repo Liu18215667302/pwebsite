@@ -43,4 +43,9 @@ public class MediaInfoTypeController {
         model.addAttribute("showList", jsonObject);
         return "showInfo";
     }
+
+    @RequestMapping(value="/enterMain",method = RequestMethod.GET)
+    public String enterMain() throws Exception {
+        return "main";
+    }
 }

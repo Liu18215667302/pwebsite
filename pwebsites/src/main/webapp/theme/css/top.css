@@ -1,0 +1,86 @@
+/*---------------navigation part start------------------*/
+#navi{
+    height:39px;
+    background:url(../img/navi_bg.gif) repeat-x 0 0;
+    position:relative;
+    padding: 0 20px;
+    margin: 0 0 59px 100px;
+    width: 800px;
+}
+
+#navi span.left{
+    background:url(../img/navi_left.gif) no-repeat 0 0;
+    height:39px;
+    display:block;
+    position:absolute;
+    width:20px;
+    left:0;
+    top:0;
+    padding:0;
+    margin:0;
+    font-size:0;
+}
+
+#navi span.right{
+    background:url(../img/navi_right.gif) no-repeat right top;
+    height:39px;
+    display:block;
+    position:absolute;
+    width:20px;
+    right:0;
+    top:0;
+    padding:0;
+    margin:0;
+}
+
+#navi ul{
+    height:39px;
+    list-style-type:none;
+}
+
+#navi ul li{
+    float:left;
+    display:block;
+    height:39px;
+    padding:0;
+}
+
+#navi ul li a{
+    display:block;
+    text-decoration:none;
+    height:39px;
+    color:#0f378d;
+    background:url(../img/navi_bg.gif) repeat-x 0 0;
+    float:left;
+    background-color:inherit;
+    font-size:12px;
+    font-weight:bold;
+    line-height:39px;
+}
+
+#navi ul li a span{
+    background:url(../img/navi_start.gif) no-repeat 0px center;
+    padding:0 15px;
+
+}
+
+#navi ul li a:hover{
+    color:#000000;
+    background:url(../img/navi_h.gif) no-repeat center bottom;
+    background-color:inherit;
+}
+
+#navi ul li a:hover span{
+    background:url(../img/navi_start_h.gif) no-repeat 0px center;
+}
+
+#navi ul li a.hover{
+    color:#000000;
+    background:url(../img/navi_h.gif) no-repeat center bottom;
+    background-color:inherit;
+}
+
+
+#navi ul li a.hover span{
+    background:url(../img/navi_start_h.gif) no-repeat 0px center;
+}
