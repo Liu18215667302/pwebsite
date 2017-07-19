@@ -15,7 +15,7 @@
             <div id="left">
                 <div class="innerLeft">
                     <!--flash part start -->
-                    <div id="myCarousel" class="carousel slide">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel>
                         <%--<img src="img/header.jpg" alt="" width="527" height="262" />--%>
                             <!-- 轮播（Carousel）指标 -->
                             <ol class="carousel-indicators">
@@ -61,32 +61,6 @@
                                 <th>最高学历：</th>
                                 <td colspan="3">研究生</td>
                             </tr>
-                           <%-- <tr>
-                                <td>联系方式：</td>
-                                <td>18215667302</td>
-                                <td>邮箱：</td>
-                                <td>liu2272772@163.com</td>
-                            </tr>
-                            <tr>
-                                <td>QQ：</td>
-                                <td>1282118543</td>
-                                <td>微信：</td>
-                                <td>18215667302</td>
-                            </tr>--%>
-                           <%-- <tr>
-                                <td>籍贯：</td>
-                                <td>山东省沂水县</td>
-                                <td>最高学历：</td>
-                                <td>研究生</td>
-                            </tr>
-                            <tr>
-                                <td>通讯地址：</td>
-                                <td colspan="3">成都市郫县林湾家园</td>
-                            </tr>
-                            <tr>
-                                <td>毕业学校：</td>
-                                <td colspan="3">重庆邮电大学</td>
-                            </tr>--%>
                         </table>
                         <a href="#" class="read_more">read more</a>
                     </div>
@@ -97,11 +71,12 @@
                         <img src="img/pic.gif" alt="" width="113" height="92" class="floatLeft" />
                         <div class="productRight">
                             <p class="text1">
-                                <strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</strong> Lorem Ipsum has
-                                been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the
-                                printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                                1500s.
-                                <a href="#">more</a>														</p>
+                                <strong>我的技能：</strong>
+                                熟悉Java语言、熟悉Java WEB、熟悉主流框架SSH（Spring MVC + Spring+Hibernate）、SSM（Spring MVC+Spring+MyBatis），了解Spring Data、Spring boot、BuguMongo等；
+                                熟悉网页编程(HTML5 + CSS3 + JavaScript)，熟悉JS框架JQuery、Angular2,了解JS框架vue、Angularjs、JQuery Mobile、Bootstrap、AMD等；
+                                熟悉MySQL，了解
+                                <a href="#">more</a>
+                            </p>
                         </div>
                         <br class="spacer" />
                     </div>
@@ -109,7 +84,7 @@
                         <img src="img/pic1.gif" alt="" width="113" height="92" class="floatLeft" />
                         <div class="productRight">
                             <p class="text1">
-                                <strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</strong> Lorem Ipsum has
+                                <strong>我的成果：</strong> Lorem Ipsum has
                                 been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the
                                 printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
                                 1500s.
@@ -121,7 +96,7 @@
                         <img src="img/pic2.gif" alt="" width="113" height="92" class="floatLeft" />
                         <div class="productRight">
                             <p class="text1">
-                                <strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</strong> Lorem Ipsum has
+                                <strong>技能信息：</strong> Lorem Ipsum has
                                 been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the
                                 printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
                                 1500s.
@@ -131,7 +106,7 @@
                     </div>
                     <!--product item end -->
                     <p class="text1 nobotMar">
-                        <strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </strong>standard
+                        <strong>个人评价：</strong>standard
                         dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                         been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
                         <a href="#">more</a>									</p>
@@ -143,7 +118,7 @@
             <div id="right">
                 <img src="img/logo.png" alt="Cruise Travel" title="Cruise Travel" class="logo" />
                 <div id="event">
-                    <h2>Latest events</h2>
+                    <h2>科技趣闻</h2>
                     <p class="rightText">
                         <strong>Porta vel, scelerisque eget, malesuada at, neque. suada at, neque.</strong> Vivamus eget nibh. Etiam cursus
                         leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum iaculis lacinia est. Proin dictum elementum velit. Fusce
