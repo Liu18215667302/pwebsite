@@ -28,6 +28,7 @@
     </div>
     <jsp:include page="footer/footer.jsp"/>
 </div>
+<jsp:include page="prompt/prompt.jsp"/>
 <!--1004 div end-->
 <script src="js/main.js" type="text/javascript"></script>
 </body>

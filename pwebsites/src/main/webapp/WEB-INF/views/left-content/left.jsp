@@ -60,7 +60,7 @@
                 <td colspan="3">研究生</td>
             </tr>
         </table>
-        <a href="#" class="read_more">read more</a>
+        <a href="javascript:void(0)" onclick="new LeftObj().showPrompt()" class="read_more">read more</a>
     </div>
     <span class="welcomebot">&nbsp;</span>
     <!--welcome part end -->
@@ -73,7 +73,7 @@
                 熟悉Java语言、熟悉Java WEB、熟悉主流框架SSH（Spring MVC + Spring+Hibernate）、SSM（Spring MVC+Spring+MyBatis），了解Spring Data、Spring boot、BuguMongo等；
                 熟悉网页编程(HTML5 + CSS3 + JavaScript)，熟悉JS框架JQuery、Angular2,了解JS框架vue、Angularjs、JQuery Mobile、Bootstrap、AMD等；
                 熟悉MySQL，了解
-                <a href="#">more</a>
+                <a href="javascript:void(0)" onclick="new LeftObj().showPrompt()">more</a>
             </p>
         </div>
         <br class="spacer" />
@@ -86,7 +86,7 @@
                 been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the
                 printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
                 1500s.
-                <a href="#">more</a>														</p>
+                <a href="javascript:void(0)" onclick="new LeftObj().showPrompt()">more</a>														</p>
         </div>
         <br class="spacer" />
     </div>
@@ -98,7 +98,7 @@
                 been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the
                 printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
                 1500s.
-                <a href="#">more</a>														</p>
+                <a href="javascript:void(0)" onclick="new LeftObj().showPrompt()">more</a>														</p>
         </div>
         <br class="spacer" />
     </div>
@@ -107,8 +107,9 @@
         <strong>个人评价：</strong>standard
         dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
         been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
-        <a href="#">more</a>									</p>
+        <a href="javascript:void(0)" onclick="new LeftObj().showPrompt()">more</a>									</p>
 
 </div>
+<script src="js/left.js" type="text/javascript"></script>
 </body>
 </html>
