@@ -294,11 +294,28 @@ form.contactform input.reset{
     width: 30%;
     text-align: right;
 }
+.base-info th{
+    width: 15% !important;
+}
+
 .table caption{
     text-align: center;
 }
 .tab-content {
     padding: 10px 0;
     text-align: justify;
-    min-height: 200px;
+    min-height: 300px;
+}
+.my-skill h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+.project thead th, .work thead th, .education  thead th{
+    text-align: left;
+}
+.project tbody th, .work tbody th{
+    width: 4% !important;
+}
+.education  tbody th{
+    width: 2% !important;
 }
