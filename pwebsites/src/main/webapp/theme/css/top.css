@@ -84,3 +84,13 @@
 #navi ul li a.hover span{
     background:url(../img/navi_start_h.gif) no-repeat 0px center;
 }
+.content-top{
+    text-align: center;
+}
+.content-top blockquote{
+    border-left: 0;
+}
+.content-center{
+    height: 815px;
+    overflow-y: auto;
+}
