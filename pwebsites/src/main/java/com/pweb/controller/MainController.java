@@ -9,6 +9,7 @@ import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -91,5 +92,59 @@ public class MainController {
         resultJson.put("personalPJ",personalPJ);
         response.setContentType("application/json; charset=utf-8");
         response.getWriter().write(resultJson.toString());
+    }
+
+    /**
+     * 加载简历
+     * @return
+     */
+    @RequestMapping(value = "/mainPrompt", method = RequestMethod.GET)
+    public String mainPrompt(Model model,HttpServletRequest request) {
+        return "/prompt/prompt-sub";
+    }
+
+    /**
+     * 获取我的技能
+     * @param request
+     * @param response
+     * @throws Exception
+     */
+    @RequestMapping(value="/getMySkillInfo", method = RequestMethod.GET)
+    public void getMySkillInfo(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        String id="5ba9cad6-016e-476c-88f9-5e02618f12ad";
+        getInfo(id,request,response);
+    }
+
+    /**
+     * 获取我的成果
+     * @param request
+     * @param response
+     * @throws Exception
+     */
+    @RequestMapping(value="/myMyAchievement", method = RequestMethod.GET)
+    public void myMyAchievement(HttpServletRequest request, HttpServletResponse response) throws Exception {
+       String id="20983cae-4dfd-4183-9303-dd118707ee6c";
+       getInfo(id,request,response);
+    }
+
+    /**
+     * 获取我的成果
+     * @param request
+     * @param response
+     * @throws Exception
+     */
+    @RequestMapping(value="/myPersonalPJ", method = RequestMethod.GET)
+    public void myPersonalPJ(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        String id="588b1d91-913f-400c-9947-84a8c27a50e9";
+        getInfo(id,request,response);
+    }
+    private void getInfo(String id,HttpServletRequest request, HttpServletResponse response) throws Exception {
+        JSONObject jsonObject = (JSONObject)request.getSession().getAttribute("user");
+        String username = jsonObject.getJSONObject("result").getString("username");
+
+        JSONObject result = userOtherService.queryUserOther(id, username);
+
+        response.setContentType("application/json; charset=utf-8");
+        response.getWriter().write(result.toString());
     }
 }

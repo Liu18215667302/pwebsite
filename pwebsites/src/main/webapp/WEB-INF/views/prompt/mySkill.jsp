@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<div class="my-skill">
+<div class="my-skill" id="my-skill-prompt">
     <h4>服务器</h4>
     <p style="text-align: justify;">熟悉Java语言、熟悉Java WEB、了解主流框架SSH（Spring MVC + Spring+Hibernate）、SSM（Spring MVC+Spring+MyBatis）、BuguMongo等;</p>
     <h4>前端</h4>

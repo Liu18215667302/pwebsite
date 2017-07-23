@@ -9,6 +9,7 @@ $(function () {
 function LeftObj() {
 
     this.showPrompt = function () {
+        $("#personal-body-info").load("/mainPrompt");
         $("#myModal").modal('show');
     }
     /**

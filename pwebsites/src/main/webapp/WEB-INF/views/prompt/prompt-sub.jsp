@@ -19,12 +19,12 @@
             </a>
         </li>
         <li>
-            <a href="#mySkill" data-toggle="tab">
+            <a href="#mySkill" data-toggle="tab" onclick="new PromptObj().getMySkillInfo()">
                 我的技能
             </a>
         </li>
         <li>
-            <a href="#myAchievement" data-toggle="tab">
+            <a href="#myAchievement" data-toggle="tab" onclick="new PromptObj().getMyAchievement()">
                 科研成果
             </a>
         </li>
@@ -70,7 +70,7 @@
             </ul>
         </li>
         <li>
-            <a href="#personal" data-toggle="tab">
+            <a href="#personal" data-toggle="tab" onclick="new PromptObj().personalInfo()">
                 个人评价
             </a>
         </li>

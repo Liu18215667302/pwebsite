@@ -23,8 +23,7 @@
                     简历
                 </h4>
             </div>
-            <div class="modal-body" align="center">
-                <jsp:include page="prompt-sub.jsp"/>
+            <div class="modal-body" align="center" id="personal-body-info">
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

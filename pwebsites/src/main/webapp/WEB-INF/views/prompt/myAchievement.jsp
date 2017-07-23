@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<div>
+<div id="my-achievement-prompt">
     <p style="text-align: justify">
         <strong>1.&nbsp;&nbsp;</strong>Yong Wang, Zhaolong Liu, Jianbin Ma. A pseudorandom number generator based on piecewise logistic map. Nonlinear Dynamics. 2016. 83(4):2373-2391(SCI二区).
     </p>
