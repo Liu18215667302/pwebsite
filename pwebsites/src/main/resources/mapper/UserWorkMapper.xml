@@ -9,9 +9,9 @@
     <!--插入-->
     <insert id="insertUserWork" parameterType="com.pweb.entity.UserWork">
         insert into user_work
-        (id, username, name, date, company, my_duty, content, remark, create_date, update_date)
+        (id, username, name, date, my_duty, content, remark, create_date, update_date)
          values
-        (#{id},#{username},#{name},#{date},#{company},#{myDuty},#{content},#{remark},now(),now())
+        (#{id},#{username},#{name},#{date},#{myDuty},#{content},#{remark},now(),now())
     </insert>
 
     <!--修改-->
@@ -23,9 +23,6 @@
             </if>
             <if test="date != null and date != ''">
                 date=#{date},
-            </if>
-            <if test="company != null and company != ''">
-                company=#{company},
             </if>
             <if test="myDuty != null and myDuty != ''">
                 my_duty=#{myDuty},
@@ -48,7 +45,7 @@
     <!--查询信息-->
     <sql id="select_info">
         select
-        id, username, name, date, company, my_duty as myDuty, content, remark, create_date as createDate, update_date as updateDate
+        id, username, name, date, my_duty as myDuty, content, remark, create_date as createDate, update_date as updateDate
         from user_work
     </sql>
 

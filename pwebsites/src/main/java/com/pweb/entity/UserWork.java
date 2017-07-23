@@ -7,17 +7,6 @@ import java.util.UUID;
  */
 public class UserWork {
 
-    private String id = UUID.randomUUID().toString();
-    private String username;
-    private String name;
-    private String date;
-    private String company;
-    private String myDuty;
-    private String content;
-    private String remark;
-    private String createDate;
-    private String updateDate;
-
     public String getId() {
         return id;
     }
@@ -48,14 +37,6 @@ public class UserWork {
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public String getCompany() {
-        return company;
-    }
-
-    public void setCompany(String company) {
-        this.company = company;
     }
 
     public String getMyDuty() {
@@ -97,4 +78,14 @@ public class UserWork {
     public void setUpdateDate(String updateDate) {
         this.updateDate = updateDate;
     }
+
+    private String id = UUID.randomUUID().toString();
+    private String username;
+    private String name;
+    private String date;
+    private String myDuty;
+    private String content;
+    private String remark;
+    private String createDate;
+    private String updateDate;
 }

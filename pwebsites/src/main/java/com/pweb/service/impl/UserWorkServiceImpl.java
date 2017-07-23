@@ -19,10 +19,6 @@ public class UserWorkServiceImpl implements UserWorkService {
     private UserWorkMapper userWorkMapper;
 
     @Autowired
-    public UserWorkMapper getUserWorkMapper() {
-        return userWorkMapper;
-    }
-
     public void setUserWorkMapper(UserWorkMapper userWorkMapper) {
         this.userWorkMapper = userWorkMapper;
     }
