@@ -44,20 +44,20 @@
     <span class="welcomeTop">&nbsp;</span>
     <div id="welcome">
         <table class="table">
-            <caption>刘兆龙</caption>
+            <caption>${sessionScope.user.result.name}</caption>
             <tr>
                 <th>性别：</th>
-                <td>男</td>
+                <td>${sessionScope.user.result.sex}</td>
                 <th>年龄：</th>
-                <td>27</td>
+                <td>${sessionScope.user.result.age}</td>
             </tr>
             <tr>
                 <th>出生日期：</th>
-                <td colspan="3">1990-06-14</td>
+                <td colspan="3">${sessionScope.user.result.birthday}</td>
             </tr>
             <tr>
                 <th>最高学历：</th>
-                <td colspan="3">研究生</td>
+                <td colspan="3">${sessionScope.user.result.highestEducation}</td>
             </tr>
         </table>
         <a href="javascript:void(0)" onclick="new LeftObj().showPrompt()" class="read_more">read more</a>
@@ -70,9 +70,11 @@
         <div class="productRight">
             <p class="text1">
                 <strong>我的技能：</strong>
+                <span id="myskill">
                 熟悉Java语言、熟悉Java WEB、熟悉主流框架SSH（Spring MVC + Spring+Hibernate）、SSM（Spring MVC+Spring+MyBatis），了解Spring Data、Spring boot、BuguMongo等；
                 熟悉网页编程(HTML5 + CSS3 + JavaScript)，熟悉JS框架JQuery、Angular2,了解JS框架vue、Angularjs、JQuery Mobile、Bootstrap、AMD等；
                 熟悉MySQL，了解
+                </span>
                 <a href="javascript:void(0)" onclick="new LeftObj().showPrompt()">more</a>
             </p>
         </div>
@@ -82,10 +84,13 @@
         <img src="img/pic1.gif" alt="" width="113" height="92" class="floatLeft" />
         <div class="productRight">
             <p class="text1">
-                <strong>我的成果：</strong> Lorem Ipsum has
+                <strong>我的成果：</strong>
+                <span id="result">
+                Lorem Ipsum has
                 been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the
                 printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
                 1500s.
+                </span>
                 <a href="javascript:void(0)" onclick="new LeftObj().showPrompt()">more</a>														</p>
         </div>
         <br class="spacer" />
@@ -94,19 +99,25 @@
         <img src="img/pic2.gif" alt="" width="113" height="92" class="floatLeft" />
         <div class="productRight">
             <p class="text1">
-                <strong>技能信息：</strong> Lorem Ipsum has
+                <strong>技能信息：</strong>
+                <span id="skillinfo">
+                Lorem Ipsum has
                 been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the
                 printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
                 1500s.
+                </span>
                 <a href="javascript:void(0)" onclick="new LeftObj().showPrompt()">more</a>														</p>
         </div>
         <br class="spacer" />
     </div>
     <!--product item end -->
     <p class="text1 nobotMar">
-        <strong>个人评价：</strong>standard
+        <strong>个人评价：</strong>
+        <span id="personal-pj">
+        standard
         dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
         been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
+        </span>
         <a href="javascript:void(0)" onclick="new LeftObj().showPrompt()">more</a>									</p>
 
 </div>

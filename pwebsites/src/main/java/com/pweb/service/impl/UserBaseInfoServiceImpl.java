@@ -96,4 +96,18 @@ public class UserBaseInfoServiceImpl implements UserBaseInfoService {
             return CommonUtils.setResult(false, "查询失败！");
         }
     }
+
+    public JSONObject login(String username, String password) {
+        UserBaseInfo userBaseInfo = null;
+        try {
+            userBaseInfo = userBaseInfoMapper.queryUserBaseInfoByUsernameAndPassword(username,password);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (userBaseInfo != null) {
+            return CommonUtils.setResult(true, userBaseInfo);
+        } else {
+            return CommonUtils.setResult(false, "查询失败!");
+        }
+    }
 }

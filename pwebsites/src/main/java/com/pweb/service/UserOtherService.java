@@ -15,7 +15,7 @@ public interface UserOtherService {
 
     JSONObject deleteUserOther(String id);
 
-    JSONObject queryUserOther(String id);
+    JSONObject queryUserOther(String id,String username);
 
     JSONObject queryUserOther(String name, Integer first, Integer sum);
 }

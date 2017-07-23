@@ -16,7 +16,7 @@ public interface UserOtherMapper {
 
     public Integer deleteUserOther(@Param("id") String id) throws Exception;
 
-    public UserOther queryUserOtherById(@Param("id") String id) throws Exception;
+    public UserOther queryUserOtherById(@Param("id") String id,@Param("username") String username) throws Exception;
 
     public List<UserOther> queryUserOtherLimit(@Param("name") String name,
                                                @Param("first") Integer first,

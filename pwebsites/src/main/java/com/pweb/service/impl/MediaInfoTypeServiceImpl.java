@@ -105,10 +105,10 @@ public class MediaInfoTypeServiceImpl implements MediaInfoTypeService {
         }
     }
 
-    public JSONObject queryMediaInfoType() {
+    public JSONObject queryMediaInfoType(String username) {
         List<MediaInfoType> list = null;
         try {
-            list = mediaInfoTypeMapper.queryMediaInfoTypeAll();
+            list = mediaInfoTypeMapper.queryMediaInfoTypeAll(username);
         } catch (Exception e) {
             e.printStackTrace();
             list = null;

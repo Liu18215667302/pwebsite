@@ -21,5 +21,5 @@ public interface MediaInfoTypeMapper {
 
     public MediaInfoType queryMediaInfoTypeById(@Param("id") String id) throws Exception;
 
-    public List<MediaInfoType> queryMediaInfoTypeAll() throws Exception;
+    public List<MediaInfoType> queryMediaInfoTypeAll(@Param("username") String username) throws Exception;
 }

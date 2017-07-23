@@ -10,6 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 
 /**
  * Created by Administrator on 2017/7/15 0015.
@@ -20,27 +23,20 @@ public class MediaInfoTypeController {
     @Autowired
     private MediaInfoTypeService mediaInfoTypeService;
 
-    @RequestMapping(value = "/insertMediaInfoType", method = RequestMethod.GET)
-    public String insertMediaInfoType(Model model) throws Exception {
-        MediaInfoType mediaInfoType = new MediaInfoType();
-        mediaInfoType.setTitle("asdfs你");
-        mediaInfoType.setRemark("sdfsdfsdf");
-        JSONObject jsonObject = mediaInfoTypeService.insertMediaInfoType(mediaInfoType);
-        model.addAttribute("showList",jsonObject);
-        return "showInfo";
-    }
+    /**
+     * 获取菜单信息
+     * @param request
+     * @param response
+     * @throws Exception
+     */
+    @RequestMapping(value = "/getMediaType", method = RequestMethod.GET)
+    public void getMediaType(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        JSONObject jsonObject = (JSONObject)request.getSession().getAttribute("user");
+        String username = jsonObject.getJSONObject("result").getString("username");
 
-    @RequestMapping(value = "/queryMediaInfoTypeAll", method = RequestMethod.GET)
-    public String queryMediaInfoType(Model model) throws Exception{
-        JSONObject jsonObject = mediaInfoTypeService.queryMediaInfoType();
-        model.addAttribute("showList", jsonObject);
-        return "showInfo";
-    }
+        JSONObject result = mediaInfoTypeService.queryMediaInfoType(username);
 
-    @RequestMapping(value = "/queryMediaInfoTypeById", method = RequestMethod.GET)
-    public String queryMediaInfoTypeById(Model model) throws Exception {
-        JSONObject jsonObject = mediaInfoTypeService.queryMediaInfoTypeById("0021312");
-        model.addAttribute("showList", jsonObject);
-        return "showInfo";
+        response.setContentType("application/json; charset=utf-8");
+        response.getWriter().write(result.toString());
     }
 }

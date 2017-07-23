@@ -65,10 +65,10 @@ public class UserOtherServiceImpl implements UserOtherService {
         }
     }
 
-    public JSONObject queryUserOther(String id) {
+    public JSONObject queryUserOther(String id,String username) {
         UserOther userOther = null;
         try {
-            userOther = userOtherMapper.queryUserOtherById(id);
+            userOther = userOtherMapper.queryUserOtherById(id,username);
         } catch (Exception e) {
             e.printStackTrace();
         }

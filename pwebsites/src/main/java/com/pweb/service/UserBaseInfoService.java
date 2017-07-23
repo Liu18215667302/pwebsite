@@ -18,4 +18,6 @@ public interface UserBaseInfoService {
     JSONObject queryUserBaseInfo(String username);
 
     JSONObject queryUserBaseInfo(String name, Integer first, Integer sum);
+
+    JSONObject login(String username,String password);
 }

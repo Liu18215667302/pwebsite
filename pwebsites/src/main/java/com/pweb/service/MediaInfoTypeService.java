@@ -21,5 +21,5 @@ public interface MediaInfoTypeService {
 
     JSONObject queryMediaInfoTypeById(String id);
 
-    JSONObject queryMediaInfoType();
+    JSONObject queryMediaInfoType(String username);
 }

@@ -23,4 +23,7 @@ public interface UserBaseInfoMapper {
                                                      @Param("sum") Integer sum) throws Exception;
 
     public Integer queryUserBaseInfoLimitCount(@Param("name") String name) throws Exception;
+
+    public UserBaseInfo queryUserBaseInfoByUsernameAndPassword(@Param("username") String username,
+                                                               @Param("password") String password) throws Exception;
 }

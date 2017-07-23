@@ -20,7 +20,7 @@
                         aria-hidden="true">×
                 </button>
                 <h4 class="modal-title" id="myModalLabel">
-                    刘兆龙的简历
+                    简历
                 </h4>
             </div>
             <div class="modal-body" align="center">

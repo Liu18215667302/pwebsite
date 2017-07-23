@@ -48,7 +48,10 @@
     </select>
     <!--查询全部-->
     <select id="queryMediaInfoTypeAll" resultType="com.pweb.entity.MediaInfoType">
-        select id,username,title,remark,create_date as createDate, update_date as updateDate from media_info_type order by update_date
+        select id,username,title,remark,create_date as createDate, update_date as updateDate
+        from media_info_type
+        where username = #{username}
+        order by update_date
     </select>
 
 </mapper>

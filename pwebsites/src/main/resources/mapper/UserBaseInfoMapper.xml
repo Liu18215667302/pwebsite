@@ -97,6 +97,11 @@
         <include refid="where_id"></include>
     </select>
 
+    <!--登录查询-->
+    <select id="queryUserBaseInfoByUsernameAndPassword" parameterType="java.lang.String" resultType="com.pweb.entity.UserBaseInfo">
+        <include refid="select_info"></include>
+        where username = #{username} and password = #{password}
+    </select>
     <!--模糊查询-->
     <select id="queryUserBaseInfoLimit" resultType="com.pweb.entity.UserBaseInfo">
         <include refid="select_info"></include>
