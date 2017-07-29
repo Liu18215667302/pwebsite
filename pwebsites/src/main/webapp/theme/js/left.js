@@ -9,8 +9,9 @@ $(function () {
 function LeftObj() {
 
     this.showPrompt = function () {
-        $("#personal-body-info").load("/mainPrompt");
-        $("#myModal").modal('show');
+        $("#personal-body-info").load("/mainPrompt",function() {
+            $("#myModal").modal('show');
+        });
     }
     /**
      * 获取页面信息

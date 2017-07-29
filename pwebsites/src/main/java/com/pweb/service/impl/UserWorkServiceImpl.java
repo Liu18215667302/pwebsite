@@ -94,4 +94,18 @@ public class UserWorkServiceImpl implements UserWorkService {
             return CommonUtils.setResult(false, "查询失败！");
         }
     }
+
+    public JSONObject queryUserWorkByUsername(String username) {
+        List<UserWork> list = null;
+        try {
+            list = userWorkMapper.queryUserWorkByUsername(username);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (list != null) {
+            return  CommonUtils.setResult(true, list);
+        } else {
+            return CommonUtils.setResult(false, "查询失败！");
+        }
+    }
 }

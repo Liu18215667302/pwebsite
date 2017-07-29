@@ -68,4 +68,11 @@
         select count(*) from user_work
         where name like concat(concat('%',#{name}),'%')
     </select>
+
+    <!--根据username查询-->
+    <select id="queryUserWorkByUsername" parameterType="java.lang.String" resultType="com.pweb.entity.UserWork">
+        <include refid="select_info"></include>
+        where username=#{username}
+        order by update_date
+    </select>
 </mapper>

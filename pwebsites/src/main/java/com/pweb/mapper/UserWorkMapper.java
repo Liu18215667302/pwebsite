@@ -22,4 +22,6 @@ public interface UserWorkMapper {
                                                    @Param("first") Integer first,
                                                    @Param("sum") Integer sum) throws Exception;
     public Integer queryUserWorkLimitCount(@Param("name") String name) throws Exception;
+
+    public List<UserWork> queryUserWorkByUsername(@Param("username") String username) throws Exception;
 }

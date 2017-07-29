@@ -18,4 +18,6 @@ public interface UserProjectService {
     JSONObject queryUserProject(String id);
 
     JSONObject queryUserProject(String name, Integer first, Integer sum);
+
+    JSONObject queryUserProjectByUsername(String username);
 }

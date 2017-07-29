@@ -67,4 +67,10 @@
         select count(*) from user_education
         where graducated_school like concat(concat('%',#{graducatedSchool}),'%')
     </select>
+
+    <select id="queryUserEductionByUsername" parameterType="java.lang.String" resultType="com.pweb.entity.UserEducation">
+        <include refid="select_info"></include>
+        where username=#{username}
+        order by update_date
+    </select>
 </mapper>

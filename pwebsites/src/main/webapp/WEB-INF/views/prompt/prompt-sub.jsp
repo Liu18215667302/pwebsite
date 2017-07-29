@@ -30,11 +30,12 @@
         </li>
         <li class="dropdown">
             <a href="#" id="projectInfo" class="dropdown-toggle"
+               onclick="new PromptObj().getProjectInfo()"
                data-toggle="dropdown">项目信息
                 <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="projectInfo">
-                <li>
+            <ul id="userProjectInfoName" class="dropdown-menu" role="menu" aria-labelledby="projectInfo">
+                <li style="display:none">
                     <a href="#project1" tabindex="-1" data-toggle="tab">
                         jmeter
                     </a>
@@ -48,21 +49,23 @@
         </li>
         <li class="dropdown">
             <a href="#" id="workExp" class="dropdown-toggle"
+               onclick="new PromptObj().getWorkInfo()"
                data-toggle="dropdown">工作经历
                 <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="workExp">
-                <li><a href="#work1" tabindex="-1" data-toggle="tab">jmeter</a></li>
+            <ul id="userWorkInfoName" class="dropdown-menu" role="menu" aria-labelledby="workExp">
+                <li style="display:none;"><a href="#work1" tabindex="-1" data-toggle="tab">jmeter</a></li>
                 <li><a href="#work2" tabindex="-1" data-toggle="tab">ejb</a></li>
             </ul>
         </li>
         <li class="dropdown">
             <a href="#" id="education" class="dropdown-toggle"
+               onclick="new PromptObj().getEductionInfo()"
                data-toggle="dropdown">教育背景
                 <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="education">
-                <li><a href="#edu1" tabindex="-1" data-toggle="tab">小学</a></li>
+            <ul id="userEducationInfoName" class="dropdown-menu" role="menu" aria-labelledby="education">
+                <li style="display: none;"><a href="#edu1" tabindex="-1" data-toggle="tab">小学</a></li>
                 <li><a href="#edu2" tabindex="-1" data-toggle="tab">中学</a></li>
                 <li><a href="#edu3" tabindex="-1" data-toggle="tab">高中</a></li>
                 <li><a href="#edu4" tabindex="-1" data-toggle="tab">大学</a></li>

@@ -22,4 +22,7 @@ public interface UserEducationMapper {
                                                        @Param("first") Integer first,
                                                        @Param("sum") Integer sum) throws Exception;
     public Integer queryUserEducationLimitCount(@Param("graducatedSchool") String graducatedSchool) throws Exception;
+
+    public List<UserEducation> queryUserEductionByUsername(@Param("username") String username) throws Exception;
+
 }

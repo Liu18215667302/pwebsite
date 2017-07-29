@@ -18,4 +18,6 @@ public interface UserWorkService {
     JSONObject queryUserWork(String id);
 
     JSONObject queryUserWork(String name, Integer first, Integer sum);
+
+    JSONObject queryUserWorkByUsername(String username);
 }

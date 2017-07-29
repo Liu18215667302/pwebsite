@@ -94,4 +94,18 @@ public class UserProjectServiceImpl implements UserProjectService {
             return CommonUtils.setResult(false, "查询失败！");
         }
     }
+
+    public JSONObject queryUserProjectByUsername(String username) {
+        List<UserProject> list = null;
+        try {
+            list = userProjectMapper.queryUserProjectByUser(username);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (list !=null) {
+            return CommonUtils.setResult(true, list);
+        } else {
+            return CommonUtils.setResult(false, "查询失败！");
+        }
+    }
 }

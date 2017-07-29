@@ -23,4 +23,6 @@ public interface UserProjectMapper {
                                                    @Param("first") Integer first,
                                                    @Param("sum") Integer sum) throws Exception;
     public Integer queryUserProjectLimitCount(@Param("name") String name) throws Exception;
+
+    public List<UserProject> queryUserProjectByUser(@Param("username") String username) throws Exception;
 }

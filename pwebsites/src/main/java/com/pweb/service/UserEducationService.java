@@ -18,4 +18,6 @@ public interface UserEducationService {
     JSONObject queryUserEducation(String id);
 
     JSONObject queryUserEducation(String graducatedSchool, Integer first, Integer sum);
+
+    JSONObject queryUserEducationByUsername(String username);
 }

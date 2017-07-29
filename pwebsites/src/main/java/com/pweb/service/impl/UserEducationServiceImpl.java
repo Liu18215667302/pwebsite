@@ -94,4 +94,18 @@ public class UserEducationServiceImpl implements UserEducationService {
             return CommonUtils.setResult(false, "查询失败！");
         }
     }
+
+    public JSONObject queryUserEducationByUsername(String username) {
+        List<UserEducation> list = null;
+        try {
+            list = userEducationMapper.queryUserEductionByUsername(username);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (list != null) {
+            return CommonUtils.setResult(true, list);
+        } else {
+            return CommonUtils.setResult(false, "查询失败！");
+        }
+    }
 }

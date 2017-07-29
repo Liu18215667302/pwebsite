@@ -75,4 +75,10 @@
         select count(*) from user_project
         where name like concat(concat('%',#{name}),'%')
     </select>
+
+    <select id="queryUserProjectByUser" parameterType="java.lang.String" resultType="com.pweb.entity.UserProject">
+       <include refid="select_info"></include>
+        where username = #{username}
+        order by update_date
+    </select>
 </mapper>
