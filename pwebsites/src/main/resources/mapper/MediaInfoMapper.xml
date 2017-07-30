@@ -44,13 +44,13 @@
     <select id="queryMediaInfoLimit" resultType="com.pweb.entity.MediaInfo">
         select id,username,type_id as typeId,title,content,path,remark,create_date as createDate, update_date as updateDate
         from media_info
-        where title like concat(concat('%',#{title}),'%')
+        where title like concat(concat('%',#{title}),'%') and type_id =#{typeId} and username=#{username}
         order by update_date
         limit #{first},#{sum}
     </select>
 
     <!--模糊查询数量-->
     <select id="queryMediaInfoLimitCount" parameterType="java.lang.String" resultType="java.lang.Integer">
-        select count(*) from media_info where title like concat(concat('%',#{title}),'%')
+        select count(*) from media_info where title like concat(concat('%',#{title}),'%') and type_id =#{typeId} and username=#{username}
     </select>
 </mapper>

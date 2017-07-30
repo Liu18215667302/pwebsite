@@ -32,7 +32,7 @@ function TopObject() {
                     $("#top-nav").find("li:gt(0)").remove();
                     for (var i = 0; i < data.list.length - 1; i++) {
                         var listr = liVar.clone();
-                        listr.attr("data",data.list[i].id);
+                        listr.find("a").attr("href", "/getMediaInfo/" + data.list[i].id);
                         listr.find("span").text(data.list[i].title);
                         $("#top-nav").append(listr);
                     }

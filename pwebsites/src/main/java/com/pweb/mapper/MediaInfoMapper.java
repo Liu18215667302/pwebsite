@@ -19,8 +19,12 @@ public interface MediaInfoMapper {
     public MediaInfo queryMediaInfoById(@Param("id") String id) throws Exception;
 
     public List<MediaInfo> queryMediaInfoLimit(@Param("title") String title,
+                                               @Param("typeId") String typeId,
+                                               @Param("username") String username,
                                                @Param("first") Integer first,
                                                @Param("sum") Integer sum) throws Exception;
 
-    public Integer queryMediaInfoLimitCount(@Param("title") String title) throws Exception;
+    public Integer queryMediaInfoLimitCount(@Param("title") String title,
+                                            @Param("typeId") String typeId,
+                                            @Param("username") String username) throws Exception;
 }

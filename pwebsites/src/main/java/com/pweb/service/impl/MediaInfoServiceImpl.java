@@ -82,12 +82,12 @@ public class MediaInfoServiceImpl implements MediaInfoService {
         }
     }
 
-    public JSONObject queryMediaInfo(String title, Integer first, Integer sum) {
+    public JSONObject queryMediaInfo(String title, String typeId, String username, Integer first, Integer sum) {
         List<MediaInfo> list = null;
         Integer count = null;
         try {
-            list = mediaInfoMapper.queryMediaInfoLimit(title, first, sum);
-            count = mediaInfoMapper.queryMediaInfoLimitCount(title);
+            list = mediaInfoMapper.queryMediaInfoLimit(title, typeId, username, first, sum);
+            count = mediaInfoMapper.queryMediaInfoLimitCount(title, typeId, username);
         } catch (Exception e) {
             e.printStackTrace();
         }

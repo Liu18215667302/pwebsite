@@ -17,5 +17,5 @@ public interface MediaInfoService {
 
     JSONObject queryMediaInfo(String id);
 
-    JSONObject queryMediaInfo(String title,Integer first, Integer sum);
+    JSONObject queryMediaInfo(String title,String typeId,String username, Integer first, Integer sum);
 }

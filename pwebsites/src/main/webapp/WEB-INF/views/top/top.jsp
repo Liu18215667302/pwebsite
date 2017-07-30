@@ -13,7 +13,7 @@
     <span class="left">&nbsp;</span>
     <span class="right">&nbsp;</span>
     <ul id="top-nav">
-        <li><a href="index.html" class="hover"><span>个人中心</span></a></li>
+        <li><a href="/enterMain" class="hover"><span>个人中心</span></a></li>
         <li><a href="javascript:void(0)"><span>HMTL/CSS</span></a></li>
         <li><a href="content.html"><span>JavaScript</span></a></li>
         <li><a href="content.html"><span>服务端</span></a></li>
